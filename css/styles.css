@@ -1,0 +1,121 @@
+/* COLORES */
+:root {
+    --azul: rgb(5, 36, 94);
+    --amarillo: rgb(255, 251, 2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.3em;
+    font-size: 1em;
+}
+
+/* -- Animaciones -- */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-70px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ######### HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: var(--azul);
+    border-bottom: 1px solid rgb(5, 36, 94);
+}
+
+/* -- Nav Bar -- */
+
+/* Contenedor Logo */
+.img-logo {
+    width: 70px;
+}
+
+/* Nav */
+nav {
+    color: var(--amarillo);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.link-header {
+    text-decoration: none;
+    color: var(--amarillo);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+/* ######### MAIN CONTENT */
+
+h1 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 3.3em;
+    color: var(--azul);
+    animation: fade 1.3s ease-in, slide-down 1.3s ease-in-out;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 75px;
+    font-size: 2.5em;
+    color: var(--azul);
+}
+
+h3 {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 1.7em;
+}
+
+/* -- Article AboutUs */
+.cont-aboutUs {
+    display: flex;
+    margin: 70px 0;
+}
+
+.beneficio-uno {
+    background-color: var(--azul);
+    color: var(--amarillo);
+    padding: 20px;
+}
+
+.beneficio-dos {
+    background-color: var(--amarillo);
+    color: var(--azul);
+    padding: 20px;
+}
+
+.beneficio-uno h3, .beneficio-dos h3 {
+    margin-bottom: 15px;
+}

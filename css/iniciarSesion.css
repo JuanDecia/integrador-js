@@ -1,0 +1,78 @@
+/* COLORES */
+:root {
+    --azul: rgb(5, 36, 94);
+    --amarillo: rgb(255, 251, 2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.3em;
+    font-size: 1em;
+}
+
+/* -- Animaciones -- */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-70px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ######### HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--azul);
+    border-bottom: 1px solid rgb(5, 36, 94);
+}
+
+/* -- Nav Bar -- */
+
+/* Contenedor Logo */
+.img-logo {
+    width: 70px;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    gap: 35px;
+    color: var(--amarillo);
+}
+
+.cont-linkHeader {
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    border: 1px solid white;
+}
+
+.link-header {
+    text-decoration: none;
+    color: var(--amarillo);
+    font-size: 1.1em;
+    font-weight: 500;
+}
