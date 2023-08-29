@@ -1,0 +1,186 @@
+/* COLORES */
+:root {
+    --azul: rgb(5, 36, 94);
+    --amarillo: rgb(255, 251, 2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.3em;
+    font-size: 1em;
+}
+
+/* -- Animaciones -- */
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-down {
+    from {
+        transform: translateY(-70px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ######### HEADER */
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: var(--azul);
+    border-bottom: 1px solid rgb(5, 36, 94);
+}
+
+/* -- Nav Bar -- */
+
+/* Contenedor Logo */
+.img-logo {
+    width: 70px;
+}
+
+/* Nav */
+nav {
+    color: var(--amarillo);
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.link-header {
+    position: relative;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: var(--amarillo);
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.active {
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: var(--amarillo);
+    font-size: 1.1em;
+    font-weight: 500;
+    border-bottom: 2px solid var(--amarillo);
+}
+
+/* Animación Links */
+
+.link-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    color: var(--amarillo);
+    background-color: var(--amarillo);
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in;
+}
+
+.link-header:hover::after {
+    transform: scaleX(1);
+}
+
+/* ######### MAIN CONTENT */
+h1 {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 3.3em;
+    color: var(--azul);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.42);
+    animation: fade 1.3s ease-in, slide-down 1.3s ease-in-out;
+}
+
+/* -- Articulo Iniciar Sesión -- */
+
+.cont-inicioSesion {
+    width: 60%;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: -1px 10px 26px -3px rgba(0,0,0,0.75);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    background-color: rgb(5, 36, 94);
+    border-radius: 10px;
+}
+
+.cont-input {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    background-color: transparent;
+    width: 60%;
+    outline: none;
+    font-size: 1.1em;
+    color: var(--amarillo);
+    border-bottom: 1px solid var(--amarillo);
+}
+
+input::placeholder {
+    color: var(--amarillo);
+}
+
+.cont-btn {
+    margin: 30px 0;
+}
+
+button {
+    padding: 12.5px 30px;
+    border: 0;
+    border-radius: 100px;
+    background-color: var(--amarillo);
+    color: var(--azul);
+    font-weight: Bold;
+    font-size: 1em;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  
+  button:hover {
+    background-color: #f5ff6f;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+  }
+  
+  button:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+  }

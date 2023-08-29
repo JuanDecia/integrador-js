@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion</title>
+
+    <link rel="stylesheet" href="../css/iniciarSesion.css" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="cont-logo">
+                <img src="../img/logo-almagro-removebg-preview.png" class="img-logo" alt="logo-almagro" title="logo-almagro">
+            </div>
+    
+            <nav>
+                <ul>
+                    <li><a class="link-header" href="../index.html">Inicio</a></li>
+                    <li><a class="link-header" href="#">Contactanos</a></li>
+                    <li><a class="link-header" href="./iniciarSesion.html">Inicia Sesión</a></li>
+                    <li><a class="active" href="#">Registrate</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <article>
+                <h1>Club Atlético Almagro Florida</h1>
+            </article>
+
+            <article class="cont-inicioSesion">
+                <form action="">
+
+                    <div class="cont-input">
+                        <input type="email" name="email" placeholder="Ingrese su mail" class="usuario"/>
+                    </div>
+
+                    <div class="cont-input">
+                        <input type="email" name="confirmarEmail" placeholder="Confirme su Mail" class="usuario"/>
+                    </div>
+
+                    <div class="cont-input">
+                        <input type="password" name="contraseña" placeholder="Ingrese contraseña" />
+                    </div>
+
+                    <div class="cont-input">
+                        <input type="password" name="confirmarContraseña" placeholder="Confirme Contraseña" />
+                    </div>
+
+                    <div class="cont-btn">
+                        <button class="button" onclick="iniciarSesion(this.form)">Registrate</button>
+                    </div>
+
+                </form>
+            </article>
+        </section>
+    </main>
+    <script src="../scripts/main.js"></script>
+</body>
+</html>
