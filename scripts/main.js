@@ -1,3 +1,53 @@
+// ######### MAIN
+const contenedor = document.querySelector('.cont-merch');
+
+// Funcion que renderiza una lista de productos
+
+const createProductTemplate = (product) => {
+    const { id, nombre, valor, cardImg } = product;
+
+    return `
+    
+    <div class="card-product">
+    <div class="cont-img">
+        <img class="img-product" src=${cardImg} alt=${nombre}>
+    </div>
+
+    <div class="cont-descripcion-producto">
+
+        <div class="producto-nombre">
+            ${nombre}
+        </div>
+
+        <div class="producto-valor">
+            $${valor}
+        </div>
+
+    </div>
+
+    <button class='btn-add'
+    data-id='${id}'
+    data-name='${nombre}'
+    data-valor='${valor}'
+    >ADD</button>
+</div>
+    `
+}
+
+const renderProducts = (productsList) => {
+    contenedor.innerHTML += productsList
+    .map(createProductTemplate)
+    .join("");
+};
+
+// Función inicializadora
+const init = () => {
+    renderProducts(productos);
+};
+
+init();
+
+
 // ######### PÁGINA INICIO SESIÓN
 const iniciarSesion = (formulario) => {
 
