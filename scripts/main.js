@@ -1,5 +1,6 @@
 // ######### MAIN
-const contenedor = document.querySelector('.cont-merch');
+const contenedor = document.querySelector('.cont-render');
+const showMoreBtn = document.querySelector('.cont-btn');
 
 // Funcion que renderiza una lista de productos
 
@@ -9,11 +10,11 @@ const createProductTemplate = (product) => {
     return `
     
     <div class="card-product">
-    <div class="cont-img">
+      <div class="cont-img">
         <img class="img-product" src=${cardImg} alt=${nombre}>
-    </div>
+      </div>
 
-    <div class="cont-descripcion-producto">
+      <div class="cont-descripcion-producto">
 
         <div class="producto-nombre">
             ${nombre}
@@ -23,26 +24,44 @@ const createProductTemplate = (product) => {
             $${valor}
         </div>
 
-    </div>
+      </div>
 
-    <button class='btn-add'
-    data-id='${id}'
-    data-name='${nombre}'
-    data-valor='${valor}'
-    >ADD</button>
-</div>
+      <button class='btn-add'
+      data-id='${id}'
+      data-name='${nombre}'
+      data-valor='${valor}'
+      >ADD</button>
+
+    </div>
     `
+};
+
+const isLastIndexOf = () => {
+    return appState.currentProductsIndex === appState.productsLimit -1;
 }
 
+// Función para mostrar más productos
+const showMoreProducts = () => {
+    appState.currentProductsIndex += 1;
+    let { products, currentProductsIndex } = appState;
+    renderProducts(products[currentProductsIndex]);
+    if (isLastIndexOf()) {
+        showMoreBtn.classList.add('hidden');
+    }
+}
+
+// Función que imprime la lista de productos
 const renderProducts = (productsList) => {
-    contenedor.innerHTML += productsList
-    .map(createProductTemplate)
-    .join("");
+    contenedor.innerHTML += productsList.map(createProductTemplate).join("");
 };
 
 // Función inicializadora
 const init = () => {
-    renderProducts(productos);
+
+    // Traemos el arreglo de data y solo mostramos el primer índice
+    renderProducts(appState.products[0]);
+    showMoreBtn.addEventListener('click', showMoreProducts);
+
 };
 
 init();

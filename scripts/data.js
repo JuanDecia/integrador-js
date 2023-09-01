@@ -35,4 +35,21 @@ const productos = [
         valor: 1500,
         cardImg: './img/socio.webp',
     },
-]
+];
+
+// Función divide en grupos el objeto productos
+
+const divideProductsInParts = (size) => {
+    let productsList = [];
+    for (let i = 0; i < productos.length; i += size)
+      productsList.push(productos.slice(i, i + size))
+    return productsList;
+  };
+
+// Objeto para agrupar (concepto estado)
+
+const appState = {
+    products: divideProductsInParts(3),
+    currentProductsIndex: 0,
+    productsLimit: divideProductsInParts(3).length
+};

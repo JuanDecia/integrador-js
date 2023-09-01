@@ -177,6 +177,10 @@ h2 {
 /* -- Artículo Productos -- */
 
 .cont-merch {
+    text-align: center;
+}
+
+.cont-render {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -229,9 +233,24 @@ h2 {
 
 .btn-add {
     width: 20%;
-    height: 13%;
+    height: 11%;
     margin-left: 80px;
     margin-top: 25px;
+}
+
+.cont-btn {
+    margin-bottom: 30px;
+    background-color: var(--azul);
+    border: none;
+}
+
+.boton-mas {
+    width: 50px;
+}
+
+/* Clase para aplicar cuando no haya más propductos para renderizar */
+.hidden {
+    display: none;
 }
 
 /* ######### FOOTER */
