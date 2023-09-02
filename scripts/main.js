@@ -1,6 +1,17 @@
 // ######### MAIN
+
+// Elementos Render HTML
 const contenedor = document.querySelector('.cont-render');
 const showMoreBtn = document.querySelector('.cont-btn');
+
+// Elementos Menu
+const menuBtn = document.querySelector('.menu-label');
+const barsMenu = document.querySelector('.navbar-list');
+const overlay = document.querySelector('.overlay');
+
+// Elementos Carrito
+const cart = document.querySelector('.cart');
+const cartMenu = document.querySelector('.cart-menu');
 
 // Funcion que renderiza una lista de productos
 
@@ -55,6 +66,21 @@ const renderProducts = (productsList) => {
     contenedor.innerHTML += productsList.map(createProductTemplate).join("");
 };
 
+// Función para el menú del carro
+const toggleCart = () => {
+
+    // abre el menu
+    cartMenu.classList.toggle('open-cart');
+
+    if (barsMenu.classList.contains('open-menu')) {
+        barsMenu.classList.remove('open-menu');
+        return;
+    }
+
+    overlay.classList.toggle('show-overlay');
+}
+
+
 // Función inicializadora
 const init = () => {
 
@@ -62,6 +88,8 @@ const init = () => {
     renderProducts(appState.products[0]);
     showMoreBtn.addEventListener('click', showMoreProducts);
 
+    // Carrito
+    cart.addEventListener('click', toggleCart);
 };
 
 init();

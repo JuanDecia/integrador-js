@@ -47,6 +47,27 @@ p {
     }
 }
 
+.overlay {
+    position: absolute;
+    top: 114px;
+    left: 0;
+    height: 100vh;
+    width: 76%;
+    z-index: 1; /*Para que quede por encima del resto de las cosas*/
+
+    /*Efecto de Glassmorphismo*/
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+}
+  
+  /*Toggle para el overlay (para que funcione unicamente cuando abrimos carrito o menu hamburguesa.*/
+.show-overlay {
+    display: block;
+}
+
 /* ######### HEADER */
 
 header {
@@ -69,6 +90,9 @@ header {
 
 /* Nav */
 nav {
+    display: flex;
+    align-items: center;
+    gap: 50px;
     color: var(--amarillo);
 }
 
@@ -95,6 +119,49 @@ nav ul {
     font-weight: 500;
     border-bottom: 2px solid var(--amarillo);
 }
+
+/* Menu */
+
+.menu {
+    width: 45px;
+}
+
+/* -- */
+
+/* Carrito */
+
+.cart {
+    width: 40px;
+}
+
+.cart-menu {
+    position: fixed;
+    top: 115px;
+    right: 0;
+    padding: 50px 30px;
+    background: linear-gradient(to top, #121e3c, var(--amarillo));
+    border-left: 1px solid var(--azul);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: calc(100vh - 65px);
+    overflow-y: scroll;
+    z-index: 2;
+    min-width: 375px;
+    transform: translate(200%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.open-cart {
+    transform: translate(0%);
+    transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+}
+
+.cart-menu::-webkit-scrollbar {
+    display: none;
+}
+
+/* -- */
 
 /* Animación Links */
 
@@ -264,11 +331,21 @@ footer {
 
 .footer-card {
     width: 60%;
-    padding: 10px;
+    padding: 15px;
 }
 
 .footer-card h4 {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.parrafo-footer {
+    text-align: center;
+}
+
+.mapa-club {
+    display: flex;
+    justify-content: center;
 }
 
 /* -- Article About Us */
