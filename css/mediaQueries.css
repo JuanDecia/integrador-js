@@ -49,18 +49,47 @@
 @media (max-width: 778px) {
 
     /* Header */
+    header {
+        border: 1px solid white;
+    }
+
     .navbar {
         display: flex;
-        justify-content: space-around;
+        justify-content: end;
         width: 75%;
     }
     
     .navbar-list {
         display: none;
+        position: absolute;
+        top: 113px;
+        left: 0px;
+        padding: 50px;
+        width: 100%;
+        border-radius: 0px 0px 10px 10px;
+        background-color: var(--amarillo);
+        z-index: 2;
+    }
+
+    .link-header {
+        color: var(--azul);
+    }
+
+    .link-header::after {
+        background-color: var(--azul);
+    }
+    
+    .active {
+        font-weight: 600;
+        color: var(--azul);
     }
 
     .menu-label {
         display: block;
+    }
+
+    .open-menu {
+        display: flex;
     }
 
     /* About Us */
@@ -86,6 +115,10 @@
 @media (max-width: 576px) {
     .navbar {
         justify-content: end;
+    }
+
+    .navbar-list {
+        flex-direction: column;
     }
 
     footer {
