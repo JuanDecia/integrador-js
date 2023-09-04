@@ -34,14 +34,16 @@ const createProductTemplate = (product) => {
         <div class="producto-valor">
             $${valor}
         </div>
-
+        
+        <div class='cont-btn-add'>
+          <button class='btn-add'
+          data-id='${id}'
+          data-name='${nombre}'
+          data-valor='${valor}'
+          >ADD</button>
+        </div>
       </div>
 
-      <button class='btn-add'
-      data-id='${id}'
-      data-name='${nombre}'
-      data-valor='${valor}'
-      >ADD</button>
 
     </div>
     `
@@ -80,6 +82,16 @@ const toggleCart = () => {
     overlay.classList.toggle('show-overlay');
 }
 
+// Menu y overlay
+const toggleMenu = () => {
+    barsMenu.classList.toggle('open-menu');
+    if (cartMenu.classList.contains('open-cart')) {
+        cartMenu.classList.remove('open-cart');
+        return;
+    }
+    overlay.classList.toggle('show-overlay');
+}
+
 
 // Función inicializadora
 const init = () => {
@@ -90,6 +102,9 @@ const init = () => {
 
     // Carrito
     cart.addEventListener('click', toggleCart);
+
+    // Menu
+    menuBtn.addEventListener('click', toggleMenu);
 };
 
 init();

@@ -1,0 +1,107 @@
+@media (max-width: 992px) {
+
+    nav {
+        gap: 30px;
+    }
+
+    .btn-delete {
+        margin-bottom: 40px;
+    }
+
+    /* Cont render */
+
+    .card-product {
+        width: 50%;
+    }
+
+    .img-product {
+        width: 300px;
+    }
+
+    .producto-nombre {
+        font-size: 1.5em;
+    }
+
+    .producto-valor {
+        font-size: 1.4em;
+    }
+
+    /* Footer */
+
+    footer {
+        flex-wrap: wrap;
+    }
+    
+    .footer-card {
+        width: 100%;
+    }
+
+    .footer-contacto {
+        width: 50%;
+    }
+
+    .footer-sede {
+        width: 45%;
+    }
+    
+}
+
+@media (max-width: 778px) {
+
+    /* Header */
+    .navbar {
+        display: flex;
+        justify-content: space-around;
+        width: 75%;
+    }
+    
+    .navbar-list {
+        display: none;
+    }
+
+    .menu-label {
+        display: block;
+    }
+
+    /* About Us */
+    .cont-aboutUs {
+        flex-wrap: wrap;
+    }
+
+    .beneficio-uno {
+        width: 100%;
+    }
+
+    .cont-beneficio-titulo {
+        font-size: 1.3em;
+    }
+
+    /* Contenedor Render */
+    .card-product {
+        width: 60%;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .navbar {
+        justify-content: end;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+
+    .footer-contacto {
+        width: 100%;
+    }
+
+    .social-img {
+        justify-content: center;
+        gap: 50px;
+    }
+
+    .footer-sede {
+        width: 100%;
+    }
+}

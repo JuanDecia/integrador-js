@@ -52,7 +52,7 @@ p {
     top: 114px;
     left: 0;
     height: 100vh;
-    width: 76%;
+    width: 100%;
     z-index: 1; /*Para que quede por encima del resto de las cosas*/
 
     /*Efecto de Glassmorphismo*/
@@ -102,6 +102,10 @@ nav ul {
     list-style: none;
 }
 
+.navbar-list {
+    order: 1;
+}
+
 .link-header {
     position: relative;
     padding-bottom: 10px;
@@ -126,9 +130,20 @@ nav ul {
     width: 45px;
 }
 
+/* Ocultamos menu en pantalla grandes */
+
+.menu-label {
+    order: 3;
+    display: none;
+}
+
 /* -- */
 
 /* Carrito */
+
+.cont-cart {
+    order: 2;
+}
 
 .cart {
     width: 40px;
@@ -237,8 +252,15 @@ h2 {
     padding: 20px;
 }
 
+.cont-beneficio-titulo {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
+
 .beneficio-uno h3, .beneficio-dos h3 {
     margin-bottom: 15px;
+    text-align: center;
 }
 
 /* -- Artículo Productos -- */
@@ -282,27 +304,39 @@ h2 {
 
 /* Descripción del producto */
 .cont-descripcion-producto {
-    margin-top: 20px;
-    margin-left: 10px;
-    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    width: 100%;
 }
 
 .producto-nombre {
+    width: 100%;
+    margin-bottom: 20px;
     font-weight: 600;
-    font-size: 1.1em;
+    font-size: 1.2em;
 }
 
 .producto-valor {
-    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    font-weight: 600;
 }
 
 /* Botón ADD */
 
+.cont-btn-add {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
 .btn-add {
-    width: 20%;
-    height: 11%;
-    margin-left: 80px;
-    margin-top: 25px;
+    width: 55px;
+    height: 30px;
 }
 
 .cont-btn {
@@ -329,18 +363,80 @@ footer {
     color: #888888;
 }
 
+.footer-sub {
+    font-size: 1.4em;
+}
+
+.parrafo-footer {
+    text-align: center;
+}
+
+/* -- Contenedor Sobre Nosotros -- */
 .footer-card {
-    width: 60%;
+    width: 50%;
     padding: 15px;
 }
 
 .footer-card h4 {
     text-align: center;
+    margin-bottom: 40px;
+}
+
+/* -- Contenedor Contactanos -- */
+
+.footer-contacto {
+    width: 50%;
+    padding: 15px;
+}
+
+.footer-contacto h4 {
+    text-align: center;
+}
+
+.cont-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.cont-info {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.cont-social {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cont-social h4 {
+    width: 100%;
     margin-bottom: 20px;
 }
 
-.parrafo-footer {
+.social-img {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.social-img svg {
+    width: 40px;
+}
+
+/* Contenedor Sede */
+
+.footer-sede {
+    width: 50%;
+    padding: 15px;
+}
+
+.footer-sede h4 {
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .mapa-club {
@@ -348,4 +444,7 @@ footer {
     justify-content: center;
 }
 
-/* -- Article About Us */
+.mapa-club iframe {
+    max-width: 100%;
+    border-radius: 10px;
+}
