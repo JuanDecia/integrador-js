@@ -46,7 +46,8 @@ const createProductTemplate = (product) => {
           data-id='${id}'
           data-name='${nombre}'
           data-valor='${valor}'
-          >ADD</button>
+          data-img='${cardImg}'
+          >Agregar</button>
         </div>
       </div>
 
@@ -133,7 +134,7 @@ const renderCart = () => {
     if (!cart.length) {
         productsCart.innerHTML = `
         <div class='empty-message'>
-            <p class='empty-msg'>No hay productos en el carrito</p>
+            <p class='empty-msg'>No hay productos en el carrito.</p>
         </div>
         `
         return;
@@ -148,7 +149,9 @@ const createCartProductTemplate = (cartProduct) => {
 
     return `
     <div class="card-item">
-        <img src='${img}' alt=${name} />
+        <div class='item-img'>
+            <img src=${img} alt=${name} />
+        </div>
         <div class="item-data">
         <div class="item-info">
             <h3 class="item-title">${name}</h3>
@@ -178,7 +181,7 @@ const getCartTotal = () => {
 const addProduct = (e) => {
 
     if (!e.target.classList.contains('btn-add')) {
-        return 
+        return;
     }
 
     const product = createProductData(e.target.dataset);
@@ -315,7 +318,7 @@ const CompleteCartAction = (confirmMsg, successMsg) => {
 };
 
 const deleteCart = () => {
-    CompleteCartAction('Desea vaciar el carrito?', 'No hay productos en el carrito');
+    CompleteCartAction('Desea vaciar el carrito?', 'No hay productos en el carrito.');
 };
 
 // Función inicializadora

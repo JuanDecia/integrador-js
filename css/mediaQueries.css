@@ -125,13 +125,23 @@
         flex-direction: column;
     }
 
+    /* Menu Carrito */
+
+    .item-img img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .quantity-handler {
+        width: 35%;
+    }
+
     /* -- Main Content -- */
 
     .cont-portada {
         display: flex;
         flex-wrap: wrap;
         gap: 35px;
-        border: 1px solid red;
     }
 
     .portada {
