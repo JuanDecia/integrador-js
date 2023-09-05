@@ -112,7 +112,11 @@
 
 }
 
+/* 576px (celulares) */
+
 @media (max-width: 576px) {
+
+    /* -- Header -- */
     .navbar {
         justify-content: end;
     }
@@ -121,6 +125,39 @@
         flex-direction: column;
     }
 
+    /* -- Main Content -- */
+
+    .cont-portada {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px;
+        border: 1px solid red;
+    }
+
+    .portada {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px;
+    }
+
+    .cont-beneficio-titulo h3 {
+        font-size: 1.5em;
+    }
+
+    .cont-beneficio-parrafo p {
+        font-size: 1.3em;
+    }
+
+    .beneficio-dos .cont-beneficio-titulo {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .card-product {
+        width: 80%;
+    }
+
+    /* -- Footer -- */
     footer {
         flex-wrap: wrap;
     }

@@ -43,6 +43,8 @@ p {
 
 header {
     display: flex;
+    position: sticky;
+    top: 0;
     align-items: center;
     justify-content: space-around;
     padding: 20px;
@@ -60,6 +62,11 @@ header {
 /* Nav */
 nav {
     color: var(--amarillo);
+}
+
+.menu {
+    display: none;
+    width: 45px;
 }
 
 nav ul {
@@ -84,6 +91,28 @@ nav ul {
     font-size: 1.1em;
     font-weight: 500;
     border-bottom: 2px solid var(--amarillo);
+}
+
+/* Efecto Overlay */
+.overlay {
+    position: absolute;
+    top: 114px;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 1; /*Para que quede por encima del resto de las cosas*/
+
+    /*Efecto de Glassmorphismo*/
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    display: none;
+}
+
+/* Toggle para el overlay */
+.show-overlay {
+    display: block;
 }
 
 /* Animación Links */
@@ -117,7 +146,7 @@ h1 {
 
 /* -- Articulo Iniciar Sesión -- */
 
-.cont-inicioSesion {
+.cont-registro {
     width: 60%;
     margin: 40px auto;
     border-radius: 10px;
@@ -169,18 +198,67 @@ button {
     font-size: 1em;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #f5ff6f;
     box-shadow: 0 0 20px #6fc5ff50;
     transform: scale(1.1);
-  }
-  
-  button:active {
+}
+
+button:active {
     background-color: #3d94cf;
     transition: all 0.25s;
     -webkit-transition: all 0.25s;
     box-shadow: none;
     transform: scale(0.98);
-  }
+}
+
+/* Media Queries */
+
+@media (max-width: 778px) {
+
+    .menu {
+        display: flex;
+    }
+
+    .navbar-list {
+        display: none;
+        justify-content: space-around;
+        position: absolute;
+        top: 113px;
+        left: 0;
+        padding: 30px;
+        width: 100%;
+        background-color: yellow;
+        z-index: 2;
+    }
+
+    .link-header {
+        color: var(--azul);
+    }
+
+    .link-header::after {
+        background-color: var(--azul);
+    }
+
+    .active {
+        color: var(--azul);
+        font-weight: 600;
+    }
+
+    .open-menu {
+        display: flex;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .cont-title {
+        padding: 10px;
+    }
+
+    .cont-registro {
+        width: 80%;
+    }
+}

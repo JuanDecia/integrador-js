@@ -217,6 +217,10 @@ button:active {
 
 @media (max-width: 788px) {
 
+    h1 {
+        padding: 10px;
+    }
+
     .menu {
         display: flex;
     }
@@ -250,5 +254,9 @@ button:active {
         display: flex;
     }
 
+    /* Main Content */
 
+    .cont-inicioSesion {
+        width: 80%;
+    }
 }

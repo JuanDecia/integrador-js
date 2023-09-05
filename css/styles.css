@@ -448,3 +448,38 @@ footer {
     max-width: 100%;
     border-radius: 10px;
 }
+
+/* Disabled */
+.disabled {
+    background-color: var(--text-gray);
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
+
+.disabled:hover {
+    background-color: var(--text-gray);
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
+
+/* Modal */
+.add-modal {
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    background-color: green;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    transition: all 0.5s ease-out;
+    transform: translateY(200%);
+}
+  
+.active-modal {
+    transform: translateY(0);
+    transition: all 0.5s ease-in;
+}
